@@ -53,7 +53,7 @@
     <Compile Include="Drivers\LenovoDriver.cs" />
     <Compile Include="Features\AbstractWMIFeature.cs" />
     <Compile Include="Features\IFeature.cs" />
-    <Compile Include="Features\PowerModeState.cs" />
+    <Compile Include="Features\PowerModeFeature.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
