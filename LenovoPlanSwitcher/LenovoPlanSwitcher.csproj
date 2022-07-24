@@ -62,7 +62,6 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="Native\IO.cs" />
-    <Compile Include="Features\Models\PowerPlan.cs" />
     <Compile Include="Native\PowerPlanNative.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

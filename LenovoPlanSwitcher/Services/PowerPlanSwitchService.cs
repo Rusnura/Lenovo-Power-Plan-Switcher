@@ -1,5 +1,4 @@
 ﻿using LenovoPlanSwitcher.Features;
-using LenovoPlanSwitcher.Features.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -31,17 +30,17 @@ namespace LenovoPlanSwitcher.Services
             switch (PreviousLenovoState)
             {
                 case PowerModeState.Quiet:
-                    if (QuietModePowerPlan.powerPlanId != Guid.Empty)
+                    if (QuietModePowerPlan.PowerPlanId != Guid.Empty)
                         CurrentWindowsPlan = QuietModePowerPlan;
                 break;
 
                 case PowerModeState.Balance:
-                    if (BalanceModePowerPlan.powerPlanId != Guid.Empty)
+                    if (BalanceModePowerPlan.PowerPlanId != Guid.Empty)
                         CurrentWindowsPlan = BalanceModePowerPlan;
                 break;
 
                 case PowerModeState.Performance:
-                    if (PerformanceModePowerPlan.powerPlanId != Guid.Empty)
+                    if (PerformanceModePowerPlan.PowerPlanId != Guid.Empty)
                         CurrentWindowsPlan = PerformanceModePowerPlan;
                 break;
 

@@ -1,4 +1,4 @@
-﻿using LenovoPlanSwitcher.Features.Models;
+﻿using LenovoPlanSwitcher.Features;
 using LenovoPlanSwitcher.Native;
 using System;
 using System.Collections.Generic;
@@ -9,9 +9,27 @@ using System.Windows.Forms;
 
 namespace LenovoPlanSwitcher.Features
 {
+    public class PowerPlan
+    {
+        public Guid PowerPlanId { get; }
+        public string Name { get; }
+
+        public PowerPlan(Guid powerPlanId, string name)
+        {
+            PowerPlanId = powerPlanId;
+            Name = name;
+        }
+
+        public override string ToString()
+        {
+            return Name;
+        }
+    }
+
     public class PowerPlanFeature : IFeature<PowerPlan>
     {
         public readonly List<PowerPlan> powerPlans;
+        public readonly PowerPlan emptyPowerPlan = new PowerPlan(Guid.Empty, "-");
 
         public PowerPlanFeature()
         {
@@ -25,24 +43,24 @@ namespace LenovoPlanSwitcher.Features
             try
             {
                 Guid currentPowerPlan = PowerPlanNative.getCurrentPowerPlan();
-                return powerPlans.First(plan => plan.powerPlanId.Equals(currentPowerPlan));
+                return powerPlans.First(plan => plan.PowerPlanId.Equals(currentPowerPlan));
             }
             catch
             {
                 MessageBox.Show("Не удалось получить текущий план производительности Windows!" +
                     "Проверьте, есть ли у Вас права администратора!");
-                return null;
+                return emptyPowerPlan;
             }
         }
 
         public void SetState(PowerPlan plan)
         {
-            if (plan.powerPlanId == Guid.Empty)
+            if (plan.PowerPlanId == Guid.Empty)
             {
                 return;
             }
 
-            PowerPlanNative.SetPowerPlan(plan.powerPlanId);
+            PowerPlanNative.SetPowerPlan(plan.PowerPlanId);
         }
     }
 }
