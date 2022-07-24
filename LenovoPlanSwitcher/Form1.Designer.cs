@@ -31,16 +31,16 @@
             this.components = new System.ComponentModel.Container();
             this.button1 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.performanceMode_cmbBox = new System.Windows.Forms.ComboBox();
+            this.balancedMode_cmbBox = new System.Windows.Forms.ComboBox();
+            this.quietMode_cmbBox = new System.Windows.Forms.ComboBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.currentLenovoPlan_lbl = new System.Windows.Forms.Label();
             this.currentWindowsPlan_lbl = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.slientMode_cmbBox = new System.Windows.Forms.ComboBox();
-            this.balancedMode_cmbBox = new System.Windows.Forms.ComboBox();
-            this.performanceMode_cmbBox = new System.Windows.Forms.ComboBox();
             this.lenovoPowerPlanWatch_tmr = new System.Windows.Forms.Timer(this.components);
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -58,7 +58,7 @@
             // 
             this.groupBox1.Controls.Add(this.performanceMode_cmbBox);
             this.groupBox1.Controls.Add(this.balancedMode_cmbBox);
-            this.groupBox1.Controls.Add(this.slientMode_cmbBox);
+            this.groupBox1.Controls.Add(this.quietMode_cmbBox);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label3);
@@ -68,6 +68,60 @@
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "groupBox1";
+            // 
+            // performanceMode_cmbBox
+            // 
+            this.performanceMode_cmbBox.FormattingEnabled = true;
+            this.performanceMode_cmbBox.Location = new System.Drawing.Point(263, 102);
+            this.performanceMode_cmbBox.Name = "performanceMode_cmbBox";
+            this.performanceMode_cmbBox.Size = new System.Drawing.Size(449, 28);
+            this.performanceMode_cmbBox.TabIndex = 6;
+            this.performanceMode_cmbBox.SelectionChangeCommitted += new System.EventHandler(this.performanceMode_cmbBox_SelectionChangeCommitted);
+            // 
+            // balancedMode_cmbBox
+            // 
+            this.balancedMode_cmbBox.FormattingEnabled = true;
+            this.balancedMode_cmbBox.Location = new System.Drawing.Point(263, 65);
+            this.balancedMode_cmbBox.Name = "balancedMode_cmbBox";
+            this.balancedMode_cmbBox.Size = new System.Drawing.Size(449, 28);
+            this.balancedMode_cmbBox.TabIndex = 5;
+            this.balancedMode_cmbBox.SelectionChangeCommitted += new System.EventHandler(this.balancedMode_cmbBox_SelectionChangeCommitted);
+            // 
+            // quietMode_cmbBox
+            // 
+            this.quietMode_cmbBox.FormattingEnabled = true;
+            this.quietMode_cmbBox.Location = new System.Drawing.Point(263, 29);
+            this.quietMode_cmbBox.Name = "quietMode_cmbBox";
+            this.quietMode_cmbBox.Size = new System.Drawing.Size(449, 28);
+            this.quietMode_cmbBox.TabIndex = 4;
+            this.quietMode_cmbBox.SelectionChangeCommitted += new System.EventHandler(this.quietMode_cmbBox_SelectionChangeCommitted);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(15, 105);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(217, 20);
+            this.label5.TabIndex = 2;
+            this.label5.Text = "Производительный режим:";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(15, 68);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(214, 20);
+            this.label4.TabIndex = 1;
+            this.label4.Text = "Сбалансированный режим:";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(15, 32);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(109, 20);
+            this.label3.TabIndex = 0;
+            this.label3.Text = "Тихий режим:";
             // 
             // label1
             // 
@@ -105,57 +159,6 @@
             this.currentWindowsPlan_lbl.TabIndex = 5;
             this.currentWindowsPlan_lbl.Text = "-";
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(15, 32);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(109, 20);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "Тихий режим:";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(15, 68);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(214, 20);
-            this.label4.TabIndex = 1;
-            this.label4.Text = "Сбалансированный режим:";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(15, 105);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(217, 20);
-            this.label5.TabIndex = 2;
-            this.label5.Text = "Производительный режим:";
-            // 
-            // slientMode_cmbBox
-            // 
-            this.slientMode_cmbBox.FormattingEnabled = true;
-            this.slientMode_cmbBox.Location = new System.Drawing.Point(263, 29);
-            this.slientMode_cmbBox.Name = "slientMode_cmbBox";
-            this.slientMode_cmbBox.Size = new System.Drawing.Size(449, 28);
-            this.slientMode_cmbBox.TabIndex = 4;
-            // 
-            // balancedMode_cmbBox
-            // 
-            this.balancedMode_cmbBox.FormattingEnabled = true;
-            this.balancedMode_cmbBox.Location = new System.Drawing.Point(263, 65);
-            this.balancedMode_cmbBox.Name = "balancedMode_cmbBox";
-            this.balancedMode_cmbBox.Size = new System.Drawing.Size(449, 28);
-            this.balancedMode_cmbBox.TabIndex = 5;
-            // 
-            // performanceMode_cmbBox
-            // 
-            this.performanceMode_cmbBox.FormattingEnabled = true;
-            this.performanceMode_cmbBox.Location = new System.Drawing.Point(263, 102);
-            this.performanceMode_cmbBox.Name = "performanceMode_cmbBox";
-            this.performanceMode_cmbBox.Size = new System.Drawing.Size(449, 28);
-            this.performanceMode_cmbBox.TabIndex = 6;
-            // 
             // lenovoPowerPlanWatch_tmr
             // 
             this.lenovoPowerPlanWatch_tmr.Interval = 1000;
@@ -192,7 +195,7 @@
         private System.Windows.Forms.Label currentWindowsPlan_lbl;
         private System.Windows.Forms.ComboBox performanceMode_cmbBox;
         private System.Windows.Forms.ComboBox balancedMode_cmbBox;
-        private System.Windows.Forms.ComboBox slientMode_cmbBox;
+        private System.Windows.Forms.ComboBox quietMode_cmbBox;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
